@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+
+  
+
+}
+.cotainer{
+  height: 100vh;
+}
+header{
+  background-image: url(./images/bg-mobile-light.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding:48px 24px  0px 24px;
+
+}
+.nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 0px 40px 0px ;
+}
+.logo{
+  color: #fff;
+  letter-spacing: .2rem;
+  font-size: 20px;
+  font-weight: bold;
+}
+.moon-icon{
+  width: 20px;
+  height: 20px;
+  letter-spacing: 2.5px;
+}
