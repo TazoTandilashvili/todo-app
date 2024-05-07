@@ -11,6 +11,7 @@ checkBox.addEventListener('click', function(){
     task.textContent = text;
     console.log(task.textContent);
     console.log(text)
+    console.log('daemata')
   } 
   
 });
