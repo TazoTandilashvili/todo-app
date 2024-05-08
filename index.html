@@ -17,7 +17,7 @@
 <body>
 <div class="cotainer">
   <header class="header">
-    <div class="nav">
+    <div class="nav displayRowGap">
       <h1 class="logo">TODO</h1>
       <div class="them ">
         <img src="./images/icon-moon.svg" alt="moon-icon" class="moon-icon">
@@ -29,26 +29,23 @@
       <input type="checkbox" id="checkBox"> 
     </div>
   </header>
-  <section class="todo-tasks">
-    <div class="task">
+  <section class="todo-tasks" id="todoList">
+    <!-- <div class="task">
       <div class="checkBoxDiv">
-        <input type="checkbox" id="tasckCheck"> 
+        <input type="checkbox" class="tasckCheck"> 
       </div>
       <p class="taskProperty">Complete online JavaScript course</p>
       <div class="remove-task">
         <img src="./images/icon-cross.svg" alt="icon-cross" class="cross-icon">
       </div>
-    </div>
-<!-- test 2 task -->
-    <div class="task">
-      <div class="checkBoxDiv">
-        <input type="checkbox" id="tasckCheck"> 
+    </div> -->
+    
+    <section class="taskInfoSection">
+      <div class="taskInfos displayRowGap">
+        <p class="itemCount">0 items left</p>
+        <button class="clear-completed">Cleare Completed</button>
       </div>
-      <p class="taskProperty">Complete online JavaScript course</p>
-      <div class="remove-task">
-        <img src="./images/icon-cross.svg" alt="icon-cross" class="cross-icon">
-      </div>
-    </div>
+    </section>
   </section>
 </div>
   <script src="./script.js"></script>
