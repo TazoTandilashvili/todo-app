@@ -121,9 +121,11 @@ header{
   top: -10px;
   left: 0px;
 }
-.taskProperty{
+.taskProperty {
   color: #494c6b;
   letter-spacing: -0.17px;
+  padding-left: 52px;
+
 }
 .remove-task{
   display: flex;
