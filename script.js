@@ -9,7 +9,6 @@ let text=''
 const itemCount = document.querySelector('.itemCount');
 
 checkBox.addEventListener('click', function(){
-<<<<<<< HEAD
   if (checkBox.checked && textInput != "" ){
 
     // create new div
@@ -29,16 +28,6 @@ checkBox.addEventListener('click', function(){
     `
     todoList.insertBefore(newTask, todoList.lastElementChild);
     // count tasks
-=======
-  if (checkBox.checked){
-    const task = document.querySelector('.taskProperty');
-    text = textInput.value;
-    task.textContent = text;
-    console.log(task.textContent);
-    console.log(text)
-    
-  } 
->>>>>>> e72e2f8e4f2ec0e1469248636eb0ce5814826d89
   
     counter++;
     itemCount.innerHTML = `${counter} items left`;
