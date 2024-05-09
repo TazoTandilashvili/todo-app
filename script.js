@@ -8,6 +8,8 @@ let counter = 0;
 let text=''
 const itemCount = document.querySelector('.itemCount');
 
+const checkboxStyle = document.querySelector('input[type="checkbox"]#checkBox');
+
 checkBox.addEventListener('click', function(){
   if (checkBox.checked && textInput.value != "" ){
 
@@ -30,15 +32,28 @@ checkBox.addEventListener('click', function(){
     `
     todoList.insertBefore(newTask, todoList.lastElementChild);
     // count tasks
-  
     counter++;
     itemCount.innerHTML = `${counter} items left`;
     console.log(counter)
-  } 
 
+
+   
+    setTimeout(function(){
+      checkboxStyle.style.content = '';
+      checkBox.checked = false
+      textInput.value = "";
+    }, 1000)
+  } 
+  checkboxStyle.style.content = 'url(./images/icon-check.svg)';
  
   
 })
+
+
+
+
+
+
 
 
 const taskProperty = document.querySelector('.taskProperty')

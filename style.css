@@ -58,36 +58,30 @@ header{
   outline: none;
   padding-left: 76px ;
 }
-
-.input input[type="checkbox"] {
+#checkBox{
   position: absolute;
   left: 20px;
   top: 14px;
-}
-/* checkbox settin for every checkbox */
-
- input[type="checkbox"]{
-  appearance: none;
-  -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  border-radius: 50%; 
-  border: 1px solid #ccc; 
+  outline: none;
 }
 
- input[type="checkbox"]:checked {
+input[type="checkbox"]{
+  appearance: none;
+  border-radius: 50%;
+  border: 1px solid #e3e4f1;
+}
+
+input[type="checkbox"]:checked{
   background-image: linear-gradient(135deg, #5df, #c058f3);
-  border: none;
-
-}
-
- input[type="checkbox"]:checked::after {
-  content: url('./images/icon-check.svg'); 
-  position: absolute;
-  top: 4.5px;
-  left: 4.5px;
+  content: url(./images/icon-check.svg);
+  padding: 4.5px;
+  transition: 0.5s ease-in-out;
   
 }
+
+
 
 /* task section */
 .todo-tasks{
