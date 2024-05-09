@@ -7,8 +7,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
   <title>Frontend Mentor | Todo app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
@@ -25,32 +23,22 @@
     </div>
     <!-- GET TASK -->
     <div class="input">
-      <input type="text" id="textInput" placeholder="Create a new todo…">
+      <input type="text" id="textInput" placeholder="Create a new todo…" autocomplete="off">
       <input type="checkbox" id="checkBox"> 
 
     </div>
   </header>
+  <!-- TASKS ADD MANUALY FROM JS -->
   <section class="todo-tasks" id="todoList">
-    <div class="task">
-      <div class="checkBoxDiv">
-        <input type="checkbox" class="tasckCheck" onclick="getPValue(this)"> 
-      </div>
-      <div>
-      <p class="taskProperty ">${text}</p>
-      </div>
-      <div class="remove-task" >
-        <img src="./images/icon-cross.svg" alt="icon-cross" class="cross-icon" onclick="removeTask(this)">
-      </div>
-    </div>
-    
+  <!-- DONE TASKS INFO AND REMOVE DONE TASK SECTION -->
     <section class="taskInfoSection">
       <div class="taskInfos displayRowGap">
         <p class="itemCount">0 items left</p>
-        <button class="clear-completed" >Cleare Completed</button>
+        <button class="clear-completed" onclick="cleareDoneTasks()">Cleare Completed</button>
       </div>
     </section>
   </section>
 </div>
-  <script src="./script.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
