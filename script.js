@@ -6,8 +6,6 @@ const todoList = document.getElementById('todoList');//append child
 
 let counter = 0;
 let text=''
-const itemCount = document.querySelector('.itemCount');
-
 const checkboxStyle = document.querySelector('input[type="checkbox"]#checkBox');
 
 checkBox.addEventListener('click', function(){
@@ -16,10 +14,8 @@ checkBox.addEventListener('click', function(){
     // create new div
     const newTask = document.createElement('div');
     newTask.classList.add('task');
-    text = textInput.value
+    text = textInput.value;
     newTask.innerHTML = `
-    
-
     <div class="checkBoxDiv">
         <input type="checkbox" class="tasckCheck" onclick="getPValue(this)"> 
       </div>
@@ -29,34 +25,24 @@ checkBox.addEventListener('click', function(){
       <div class="remove-task" >
         <img src="./images/icon-cross.svg" alt="icon-cross" class="cross-icon" onclick="removeTask(this)">
     </div>
-    `
+    `;
+    // ADD NEW TASK IN THE TASK SECTION 
     todoList.insertBefore(newTask, todoList.lastElementChild);
-    // count tasks
+    // COUNT UNFINISHED TASKS 
+    const itemCount = document.querySelector('.itemCount');
     counter++;
     itemCount.innerHTML = `${counter} items left`;
-    console.log(counter)
-
-
-   
-    setTimeout(function(){
-      checkboxStyle.style.content = '';
-      checkBox.checked = false
-      textInput.value = "";
-    }, 1000)
   } 
+  // INPUT FIELD CHECKBOX ANIMATION
+  setTimeout(function(){
+    checkboxStyle.style.content = '';
+    checkBox.checked = false
+    textInput.value = "";
+  }, 1000);
   checkboxStyle.style.content = 'url(./images/icon-check.svg)';
- 
-  
 })
-
-
-
-
-
-
-
-
-const taskProperty = document.querySelector('.taskProperty')
+// IF CHECKBOX CHECKED ADD IN TO THE DONE TESK AND CHANGES LEFT TASK COCUNT 
+const itemCount = document.querySelector('.itemCount')
 function getPValue(inputElement){
   const taskPropertyValue = inputElement.parentNode.parentNode.querySelector('.taskProperty');
   taskPropertyValue.classList.toggle('doneTask')
@@ -68,24 +54,23 @@ function getPValue(inputElement){
     itemCount.innerHTML = `${counter} items left`;
   }
 }
+// TEMOVE CONCERETE TASKS FROM TASK SECTION
 function removeTask(iconElement) {
   const taskElement = iconElement.closest('.task');
   taskElement.remove();
   counter--;
   itemCount.innerHTML = `${counter} items left`;
 }
-
-
-//  CLEAR ALL TASKS
-const clearButton  = document.querySelector('.clear-completed');
-clearButton.addEventListener('click', function() {
-  const tasks = document.querySelectorAll('.task');
+//  REMOVE ALL DONE TASKS FROM TASK SECTION
+// const clearButton  = document.querySelector('.clear-completed');
+// clearButton.addEventListener('click', function() {
+//   const tasks = document.querySelectorAll('.task');
   
-  tasks.forEach(task => {
-    task.remove();
-  });
+//   tasks.forEach(task => {
+//     task.remove();
+//   });
 
-  counter = 0;
-  itemCount.innerHTML = `${counter} items left`;
-});
+//   counter = 0;
+//   itemCount.innerHTML = `${counter} items left`;
+// });
 

@@ -44,10 +44,7 @@ header{
   height: 20px;
   letter-spacing: 2.5px;
 }
-.input{
-  position: relative;
-  padding-bottom: 44px;
-}
+/* INPUT CHECKBOX STYLE */
 #textInput{
   width: 100%;
   height: 48px;
@@ -58,6 +55,12 @@ header{
   outline: none;
   padding-left: 76px ;
 }
+        /* CHECKBOX STYLING */
+/* INPUT TASK CHECKBOX SSTYLE */
+.input{
+  position: relative;
+  padding-bottom: 44px;
+}
 #checkBox{
   position: absolute;
   left: 20px;
@@ -66,29 +69,29 @@ header{
   height: 20px;
   outline: none;
 }
-
+/* TASK CHECKBOX STYLE */
+.tasckCheck{
+  width: 20px;
+  height: 20px;
+  outline: none;
+}
+/* SAME STYLE PROPERTY FOR THE CKECKBOXES */
 input[type="checkbox"]{
   appearance: none;
   border-radius: 50%;
   border: 1px solid #e3e4f1;
 }
-
 input[type="checkbox"]:checked{
   background-image: linear-gradient(135deg, #5df, #c058f3);
   content: url(./images/icon-check.svg);
   padding: 4.5px;
-  transition: 0.5s ease-in-out;
-  
+  transition: 0.5s ease-in;
 }
-
-
 
 /* task section */
 .todo-tasks{
-  /* position: absolute; */
   margin-top: -24px;
   padding: 0px 24px 0px 24px;
-  /* z-index: 1; */
   width: 100%;
 }
 .task,
@@ -97,29 +100,16 @@ input[type="checkbox"]:checked{
   border-radius: 5px;
   background-color: #fff;
   border: 1px solid rgba(194, 195, 214, 0.5);
-  /* positions */
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  /* paddings */
-  padding: 16px 20px;
-  
-}
-/* TASK CHECKBOX */
-.checkBoxDiv{
-  position: relative;
-}
-.checkBoxDiv input[type="checkbox"] {
-  position: absolute;
-  top: -10px;
-  left: 0px;
+  padding: 16px 20px;  
 }
 .taskProperty {
   color: #494c6b;
   letter-spacing: -0.17px;
   padding-left: 52px;
-
 }
 .remove-task{
   display: flex;
@@ -129,7 +119,6 @@ input[type="checkbox"]:checked{
   width: 12px;
   height: 12px;
 }
-
 /* task infoo sectiom */
 .clear-completed,
 .taskInfos{
@@ -140,12 +129,10 @@ input[type="checkbox"]:checked{
   background-color: #fff;
   outline: none;
 }
-
 /* done task customize */
 .doneTask{
   text-decoration-line: line-through;
 }
-
 .displayNone{
   display: none;
 }
