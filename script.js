@@ -1,8 +1,7 @@
 'use strict'
-
 const textInput = document.getElementById('textInput');
 const checkBox = document.getElementById('checkBox');
-const todoList = document.getElementById('todoList');//append child
+const todoList = document.getElementById('todoList');
 
 let counter = 0;
 let text=''
@@ -10,7 +9,6 @@ const checkboxStyle = document.querySelector('input[type="checkbox"]#checkBox');
 
 checkBox.addEventListener('click', function(){
   if (checkBox.checked && textInput.value != "" ){
-
     // create new div
     const newTask = document.createElement('div');
     newTask.classList.add('task');
@@ -20,7 +18,7 @@ checkBox.addEventListener('click', function(){
         <input type="checkbox" class="tasckCheck" onclick="getPValue(this)"> 
       </div>
       <div>
-      <p class="taskProperty">${text}</p>
+      <p id="idk" class="taskProperty" >${text}</p>
       </div>
       <div class="remove-task" >
         <img src="./images/icon-cross.svg" alt="icon-cross" class="cross-icon" onclick="removeTask(this)">
@@ -58,30 +56,22 @@ function getPValue(inputElement){
 function removeTask(iconElement) {
   const taskElement = iconElement.closest('.task');
   taskElement.remove();
-  counter--;
-  itemCount.innerHTML = `${counter} items left`;
-}
-//  REMOVE ALL DONE TASKS FROM TASK SECTION
-// const clearButton  = document.querySelector('.clear-completed');
-// c
-// clearButton.addEventListener('click', function() {
-//   if(getTaskClass.classList.contains("doneTask")){
-//     const tasks = document.querySelectorAll('.task');
-//     tasks.forEach(task => {
-//       task.remove();
-//     });
-//   }
-
-// });
-function cleareDoneTasks(){
-  const taskProperty = document.querySelector('.taskProperty');
-  if(taskProperty.classList.contains("doneTask")){
-    const tasks = document.querySelectorAll('.task');
-    for(let i=0;i<tasks.length; i++){
-      tasks[i].remove();
-    }
-    console.log('check')
-  }else{
-    console.log('asdasd')
+  if(counter != 0){
+    counter--;
+    itemCount.innerHTML = `${counter} items left`;
   }
 }
+//  REMOVE ALL DONE TASKS FROM TASK SECTION
+const clearComplete = document.querySelector('.clear-completed');
+clearComplete.addEventListener('click',function(){
+    const taskDivs = document.querySelectorAll('.task');
+    taskDivs.forEach(taskDiv => {
+      const taskPropertyElement = taskDiv.querySelector('.taskProperty');
+      if (taskPropertyElement.classList.contains("doneTask")){
+        taskDiv.remove();
+      }
+    });
+  });
+
+
+
