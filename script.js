@@ -72,6 +72,42 @@ clearComplete.addEventListener('click',function(){
       }
     });
   });
+// TASK INFO SECTION CUSTOMIZE AND FUNCTIONALLY
+const taskInfoTexts = document.querySelectorAll('.task-info-text');
+// REMOVE TASKINFO TEXT ACTIVE STYLE FROMM ALL ELEMENT
+function removeClassFromAll(className) {
+  taskInfoTexts.forEach(taskInfoText => {
+    taskInfoText.classList.remove(className);
+  });
+}
+taskInfoTexts.forEach(taskInfoText => {
+  taskInfoText.addEventListener('click',() => {
+    const taskShow = taskInfoText.textContent;
+    console.log(taskShow)
+    const taskDivs = document.querySelectorAll('.task');
+    taskDivs.forEach(taskDiv => {
+      const taskPropertyElement = taskDiv.querySelector('.taskProperty');
+      // remove active classes
+      removeClassFromAll('text-info-active');
+      if(taskShow === "Active"){
+        taskInfoText.classList.add('text-info-active');
+        taskDiv.style.display = "flex";
+        if (taskPropertyElement.classList.contains("doneTask")){
+          taskDiv.style.display = "none";
+        }
+      }else if(taskShow === "Completed"){
+        taskInfoText.classList.add('text-info-active');
+        taskDiv.style.display = "none";
+        if (taskPropertyElement.classList.contains("doneTask")){
+          taskDiv.style.display = "flex";
+        }
+      }else{
+        taskDiv.style.display = "flex";
+      }
+    });
+    
+  });
+});
 
 
 
