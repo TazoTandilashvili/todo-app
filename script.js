@@ -7,6 +7,22 @@ let counter = 0;
 let text=''
 const checkboxStyle = document.querySelector('input[type="checkbox"]#checkBox');
 
+
+  // last section position 
+
+// function taksInfoPosition(){
+//       const viewPortHeight = window.innerHeight;
+//       const taskinfoPosition = document.querySelector('.task-info-section');
+//       const todoTasks = document.querySelector('.todo-tasks')
+//       const headerDiv = document.querySelector('.header')
+//       taskinfoPosition.style.marginTop = viewPortHeight - (todoTasks.clientHeight + headerDiv.clientHeight  + 111 - 24  )+  "px";
+//     }
+
+// // taksInfoPosition();
+// window.addEventListener("resize",taksInfoPosition)
+
+
+
 checkBox.addEventListener('click', function(){
   if (checkBox.checked && textInput.value != "" ){
     // create new div
@@ -38,6 +54,7 @@ checkBox.addEventListener('click', function(){
     textInput.value = "";
   }, 1000);
   checkboxStyle.style.content = 'url(./images/icon-check.svg)';
+  // taksInfoPosition();
 })
 // IF CHECKBOX CHECKED ADD IN TO THE DONE TESK AND CHANGES LEFT TASK COCUNT 
 const itemCount = document.querySelector('.itemCount')
@@ -63,7 +80,7 @@ function removeTask(iconElement) {
 }
 //  REMOVE ALL DONE TASKS FROM TASK SECTION
 const clearComplete = document.querySelector('.clear-completed');
-clearComplete.addEventListener('click',function(){
+clearComplete.addEventListener('click',function() {
     const taskDivs = document.querySelectorAll('.task');
     taskDivs.forEach(taskDiv => {
       const taskPropertyElement = taskDiv.querySelector('.taskProperty');
@@ -110,4 +127,4 @@ taskInfoTexts.forEach(taskInfoText => {
 });
 
 
-
+// taskinfoPosition.style.marginTop = viewPortHeight - (todoTasks.clientHeight + headerDiv.clientHeight  + 111)+  "px";
