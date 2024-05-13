@@ -24,7 +24,11 @@ function checkBoxFunction(){
   if (checkBox.checked && textInput.value != "" ){
     // create new div
     const newTask = document.createElement('div');
-    newTask.classList.add('task');
+    if(icon.src.endsWith('/images/icon-moon.svg')){
+      newTask.classList.add('task', 'taskStyleLight');
+    }else{
+      newTask.classList.add('task', 'taskStyleDark');
+    }
     text = textInput.value;
     newTask.innerHTML = `
       <div class="checkBoxDiv">
@@ -146,7 +150,9 @@ const header = document.querySelector('.header');
 function 
 changeThem(){
   const taskClass = document.querySelectorAll('.task');
-
+  taskClass.forEach(taskckas => {
+    taskckas.classList.add("taskStyleDark");
+  })
   if(taskClass){
     taskClass.forEach(taskckas => {
       taskckas.classList.add("taskStyleDark");
