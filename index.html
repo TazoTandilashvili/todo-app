@@ -15,15 +15,15 @@
 <body>
 <div class="cotainer">
   <header class="header">
-    <div class="nav displayRowGap">
+    <div class="nav displayFlexRow">
       <h1 class="logo">TODO</h1>
       <div class="them ">
-        <img src="./images/icon-moon.svg" alt="moon-icon" class="moon-icon">
+        <img src="./images/icon-moon.svg" alt="moon-icon" class="themIcon">
       </div>
     </div>
     <!-- GET TASK -->
-    <div class="input">
-      <input type="text" id="textInput" placeholder="Create a new todo…" autocomplete="off">
+    <div class="input ">
+      <input type="text" id="textInput" class="textInputLight" placeholder="Create a new todo…" autocomplete="off">
       <input type="checkbox" id="checkBox"> 
 
     </div>
@@ -35,11 +35,11 @@
   </section>
   <!-- task info section to show sitch task is done -->
   <section class="task-info-section ">
-    <div class="taskInfos displayRowGap">
+    <div class="taskInfos displayFlexRow">
       <p class="itemCount">0 items left</p>
-      <button class="clear-completed">Cleare Completed</button>
+      <div class="clear-completed">Cleare Completed</div>
     </div>
-    <div class="task-ifno">
+    <div class="task-ifno-controll displayFlexRow">
       <h4 class="task-info-text text-info-active">All</h4>
       <h4 class="task-info-text">Active</h4>
       <h4 class="task-info-text">Completed</h4>

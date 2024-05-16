@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-
-
-
 *{
   margin: 0px;
   padding: 0px;
@@ -11,18 +8,19 @@
 body{
   background-color: #fafafa;
   font-size: 12px;
+  height: 100vh;
+  overflow: hidden;
 }
-
-.displayRowGap{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .cotainer{
   height: 100vh;
 }
+/*                   *SHORTCUT COMMANDS                              */
+.displayFlexRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+/*                   *HEADER SECTION             */
 header{
   background-image: url(./images/bg-mobile-light.jpg);
   background-repeat: no-repeat;
@@ -32,6 +30,7 @@ header{
 }
 .nav{
   padding: 0px 0px 40px 0px ;
+  justify-content: space-between;
 }
 .logo{
   color: #fff;
@@ -39,24 +38,21 @@ header{
   font-size: 20px;
   font-weight: bold;
 }
-.moon-icon{
+.themIcon{
   width: 20px;
   height: 20px;
   letter-spacing: 2.5px;
 }
-/* INPUT CHECKBOX STYLE */
+/*                    *CHECKBOX                  */
 #textInput{
   width: 100%;
   height: 48px;
   border-radius: 5px;
-  box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
-  background-color: #fff;
   border: none;
   outline: none;
   padding-left: 76px ;
 }
-        /* CHECKBOX STYLING */
-/* INPUT TASK CHECKBOX SSTYLE */
+
 .input{
   position: relative;
   padding-bottom: 44px;
@@ -69,49 +65,50 @@ header{
   height: 20px;
   outline: none;
 }
-/* TASK CHECKBOX STYLE */
+/*                    *CHECKBOX CHECKED STYLE                   */
 .tasckCheck{
   width: 20px;
   height: 20px;
   outline: none;
 }
-/* SAME STYLE PROPERTY FOR THE CKECKBOXES */
-input[type="checkbox"]{
+ input[type="checkbox"]{
   appearance: none;
   border-radius: 50%;
   border: 1px solid #e3e4f1;
 }
-input[type="checkbox"]:checked{
+ input[type="checkbox"]:checked{
   background-image: linear-gradient(135deg, #5df, #c058f3);
   content: url(./images/icon-check.svg);
   padding: 4.5px;
   transition: 0.5s ease-in;
 }
-/* task section */
+.displayNone{
+  display: none;
+}
+/*                     *CREATED TASK CUSTOMIZE                    */
+/*task section */
 .todo-tasks{
-  position: relative;
   margin-top: -24px;
   padding: 0px 24px 0px 24px;
   width: 100%;
   z-index: 1;
-}
-
-.task,
-.taskInfos{
-  width: 100%;
-  border-radius: 5px;
-  background-color: #fff;
-  border: 1px solid rgba(194, 195, 214, 0.5);
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.task{
+  width: 100%;
+  display: flex;
   justify-content: space-between;
-  padding: 16px 20px;  
+  gap: 5px;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px 20px;
 }
 .taskProperty {
-  color: #494c6b;
   letter-spacing: -0.17px;
-  padding-left: 52px;
+  text-align: center;
 }
 .remove-task{
   display: flex;
@@ -121,24 +118,12 @@ input[type="checkbox"]:checked{
   width: 12px;
   height: 12px;
 }
-/* task infoo sectiom */
-.clear-completed,
-.taskInfos{
-  color: #9495a5;
-}
-.clear-completed{
-  border: none;
-  background-color: #fff;
-  outline: none;
-}
 /* done task customize */
 .doneTask{
   text-decoration-line: line-through;
 }
-.displayNone{
-  display: none;
-}
-/* TASK INFO SECTION */
+
+/*                      *TASK INFO SECTION                         */
 .task-info-section{
   margin-top: 50px;
   position: absolute;
@@ -147,22 +132,56 @@ input[type="checkbox"]:checked{
   width: 100%;
   padding: 16px 24px 40px 24px;
 }
-
-.task-ifno{
+.taskInfos,
+.task-ifno-controll{
   width: 100%;
-  height: 48px;
-  padding: 15px 80px 15px 81px;
-  margin-top : 16px;
   border-radius: 5px;
   box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
   background-color: #fff;
-  border: 1px solid rgba(194, 195, 214, 0.5);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
   color: #9495a5;
+}
+.taskInfos{
+  justify-content: space-between;
+  padding: 16px 20px 22px 20px;
+}
+.task-ifno-controll{
+  margin-top : 16px;
+  padding: 15px 0px 19px 0px;
+  justify-content: space-around;
 }
 .text-info-active{
   color: #3a7cfd;
+}
+/*                      *DARK THEM CLASSES                        */
+/* body dark mode */
+.dark-mode{
+  background-color: #171823;
+} 
+.textInputLight{
+  background-color: #fff;
+}
+.textInputDark{
+  background-color: #25273d;
+  color: #c8cbe7;
+  box-shadow: none;
+}
+/*    taskdiv styles */
+.taskDivLight{
+  display: flex;
+  background-color: #fff;
+  color: #494c6b;
+  border: 1px solid #e3e4f1;
+}
+.taskDivDark{
+  display: flex;
+  background-color: #25273d;
+  color: #c8cbe7;
+  border: 1px solid #393a4b;
+}
+/*    checbox styles */
+.checkboxLight input[type="checkbox"]{
+  border: 1px solid #e3e4f1;
+}
+.checkboxDark input[type="checkbox"]{
+  border: 1px solid #393a4b;
 }
