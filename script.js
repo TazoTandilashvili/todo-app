@@ -152,7 +152,6 @@ taskInfoTexts.forEach(taskInfoText => {
           tasks.classList.remove('displayNone');
         }
       } else {
-        console.log('all Completed shown');
         taskInfoText.classList.add('text-info-active');
         if (doneTask.classList.contains('doneTask')) {
           tasks.classList.remove('displayNone');
@@ -220,9 +219,7 @@ function resizeFnc() {
   const todoTaskSEction = document.querySelector('.todo-tasks')
   const taskInfo = document.querySelector('.task-info-section')
   const windowHeight = window.innerHeight;
-  const taskDivHeight = todoList.offsetHeight
   todoTaskSEction.style.height = windowHeight - (header.offsetHeight + taskInfo.offsetHeight - 24) + 'px';
-  console.log(windowHeight - (header.offsetHeight + taskInfo.offsetHeight))
 }
 
 window.addEventListener('resize', resizeFnc)
