@@ -20,7 +20,7 @@ function createTaskDiv() {
     if (completed.classList.contains('text-info-active')) {
       error.style.display = 'flex';
     } else {
-      newTask.classList.add('task', 'taskDivDark');
+      newTask.classList.add('task', 'taskDivDark', 'transition');
       newTask.innerHTML = `
       <div class="checkBoxDiv checkboxDark">
           <input type="checkbox" class="tasckCheck" onclick="getPValue(event)"> 
@@ -38,7 +38,7 @@ function createTaskDiv() {
     if (completed.classList.contains('text-info-active')) {
       error.style.display = 'flex';;
     } else {
-      newTask.classList.add('task', 'taskDivLight');
+      newTask.classList.add('task', 'taskDivLight', 'transition');
       newTask.innerHTML = `
       <div class="checkBoxDiv checkboxLight">
           <input type="checkbox" class="tasckCheck" onclick="getPValue(event)"> 
@@ -79,6 +79,7 @@ checkBox.addEventListener('click', function () {
     createTaskDiv();//add new task div
     itemCounterFnc();// count undefine tasks
     checkboxAnimationFnc();// checkbox animation
+    resizeFnc()
     checkBox.checked = true
   } else {
     checkBox.checked = false;
@@ -213,5 +214,17 @@ function updateTaskThemeClass() {
 }
 //         *THEM CHANGE BUTTON EVENT LISTENER
 themButton.addEventListener('click', updateTaskThemeClass);
+
+//  scroll bar for the task divs
+function resizeFnc() {
+  const todoTaskSEction = document.querySelector('.todo-tasks')
+  const taskInfo = document.querySelector('.task-info-section')
+  const windowHeight = window.innerHeight;
+  const taskDivHeight = todoList.offsetHeight
+  todoTaskSEction.style.height = windowHeight - (header.offsetHeight + taskInfo.offsetHeight - 24) + 'px';
+  console.log(windowHeight - (header.offsetHeight + taskInfo.offsetHeight))
+}
+
+window.addEventListener('resize', resizeFnc)
 
 // taskinfoPosition.style.marginTop = viewPortHeight - (todoTasks.clientHeight + headerDiv.clientHeight  + 111)+  "px";

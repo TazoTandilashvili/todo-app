@@ -12,7 +12,7 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
+<body class="transition">
 <div class="cotainer">
   <header class="header">
     <div class="nav displayFlexRow">
@@ -22,8 +22,8 @@
       </div>
     </div>
     <!-- GET TASK -->
-    <div class="input ">
-      <input type="text" id="textInput" class="textInputLight" placeholder="Create a new todo…" autocomplete="off">
+    <div class="input transition">
+      <input type="text" id="textInput" class="textInputLight transition" placeholder="Create a new todo…" autocomplete="off">
       <input type="checkbox" id="checkBox"> 
 
     </div>
@@ -34,12 +34,12 @@
   
   </section>
   <!-- task info section to show sitch task is done -->
-  <section class="task-info-section ">
-    <div class="taskInfos displayFlexRow">
+  <section class="task-info-section transition ">
+    <div class="taskInfos displayFlexRow transition">
       <p class="itemCount">0 items left</p>
       <div class="clear-completed">Cleare Completed</div>
     </div>
-    <div class="task-ifno-controll displayFlexRow">
+    <div class="task-ifno-controll displayFlexRow transition">
       <h4 class="task-info-text text-info-active" onclick="">All</h4>
       <h4 class="task-info-text">Active</h4>
       <h4 class="task-info-text" id="completed">Completed</h4>

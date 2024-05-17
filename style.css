@@ -6,7 +6,7 @@
   font-family: "Josefin Sans", sans-serif;
 }
 body{
-  background-color: #fafafa;
+  background-color: #bebebe;
   font-size: 12px;
   height: 100vh;
   overflow: hidden;
@@ -84,6 +84,7 @@ header{
   padding: 0px 24px 0px 24px;
   width: 100%;
   z-index: 1;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -222,5 +223,8 @@ header{
 .displayNone{
   display: none;
   transition: 1s ease-in;
+}
+.transition{
+  transition: 0.5s ease-in-out;
 }
 
