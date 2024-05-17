@@ -14,12 +14,7 @@ body{
 .cotainer{
   height: 100vh;
 }
-/*                   *SHORTCUT COMMANDS                              */
-.displayFlexRow{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+
 /*                   *HEADER SECTION             */
 header{
   background-image: url(./images/bg-mobile-light.jpg);
@@ -81,9 +76,6 @@ header{
   content: url(./images/icon-check.svg);
   padding: 4.5px;
   transition: 0.5s ease-in;
-}
-.displayNone{
-  display: none;
 }
 /*                     *CREATED TASK CUSTOMIZE                    */
 /*task section */
@@ -152,6 +144,30 @@ header{
 .text-info-active{
   color: #3a7cfd;
 }
+
+/* error  */
+
+.error{
+  display:none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  border-radius: 5px;
+  transition: 0.5s ease-in;
+
+}
+.error-text{
+  padding: 50px;
+  text-align: center;
+  letter-spacing: 1.2px;
+}
+.error-cross{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
 /*                      *DARK THEM CLASSES                        */
 /* body dark mode */
 .dark-mode{
@@ -185,3 +201,26 @@ header{
 .checkboxDark input[type="checkbox"]{
   border: 1px solid #393a4b;
 }
+.errorLight{
+  background-color: #fff;
+  color: #9495a5;
+  border: 1px solid black;
+}
+.errorDark{
+  background-color: #25273d;
+  border: none;
+  color: #c8cbe7;
+  font-size: 12px;
+}
+
+/*                   *SHORTCUT COMMANDS                              */
+.displayFlexRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.displayNone{
+  display: none;
+  transition: 1s ease-in;
+}
+

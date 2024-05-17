@@ -40,11 +40,20 @@
       <div class="clear-completed">Cleare Completed</div>
     </div>
     <div class="task-ifno-controll displayFlexRow">
-      <h4 class="task-info-text text-info-active">All</h4>
+      <h4 class="task-info-text text-info-active" onclick="">All</h4>
       <h4 class="task-info-text">Active</h4>
-      <h4 class="task-info-text">Completed</h4>
+      <h4 class="task-info-text" id="completed">Completed</h4>
     </div>
   </section>
+
+  <div class="error errorLight">
+    <div class="error-cross">
+      <img src="./images/icon-cross.svg" alt="icon-cross" class="cross-icon" >
+    </div>
+    <h3 class="error-text">
+      You can't add task in complete section 
+    </h3>
+  </div>
 </div>
 <script src="./script.js"></script>
 </body>
